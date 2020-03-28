@@ -1,0 +1,261 @@
+2020-03-28 10:12:26,738 - panedl.py - root[10726] - Starting webserver - 0.0.0.0:8080
+2020-03-28 10:12:26,748 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753378903808: Initial worker pool
+2020-03-28 10:12:26,749 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753370511104: Initial worker pool
+2020-03-28 10:12:26,750 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753361856256: Initial worker pool
+2020-03-28 10:12:26,750 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753353463552: Initial worker pool
+2020-03-28 10:12:26,751 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753135535872: Initial worker pool
+2020-03-28 10:12:26,751 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753127143168: Initial worker pool
+2020-03-28 10:12:26,752 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753118750464: Initial worker pool
+2020-03-28 10:12:26,753 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753110357760: Initial worker pool
+2020-03-28 10:12:26,753 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753101965056: Initial worker pool
+2020-03-28 10:12:26,754 - httpserver.py - paste.httpserver.ThreadPool[10726] - Started new worker 139753093572352: Initial worker pool
+2020-03-28 10:12:28,142 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:28,144 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:28,147 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:27", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:12:28,147 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:38,143 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:38,145 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:38,147 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:37", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:12:38,148 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:45,409 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:45,411 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:46,005 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:12:46,012 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:12:46,060 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:46,073 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:12:46,074 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:12:47,144 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:47,148 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:47,149 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:46", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:12:47,150 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:48,144 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:48,145 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:48,146 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:47", "reporter_ip": "LONPA04", "attacker_ip": "51.141.114.209", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " United Kingdom" }
+2020-03-28 10:12:48,146 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:48,148 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:48,149 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:48,150 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:47", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:12:48,150 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:55,558 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,561 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,562 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:55", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:12:55,563 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:55,566 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,569 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,570 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:55", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:12:55,571 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:55,644 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,647 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,648 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:55", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:12:55,649 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:55,653 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,655 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:55,656 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:55", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:12:55,657 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:56,145 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:56,148 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:56,149 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:55", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:12:56,150 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:56,153 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:56,156 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:56,157 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:55", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:12:56,157 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:12:56,324 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:56,336 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:57,124 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:12:57,125 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:12:57,174 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:57,184 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:12:57,184 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:12:59,145 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:59,147 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:12:59,149 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:12:58", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:12:59,149 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:13:07,345 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:07,354 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:08,260 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:13:08,261 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:13:08,353 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:08,354 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:13:08,355 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:13:09,146 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:09,149 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:09,151 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:13:08", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:13:09,151 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:13:18,509 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:18,524 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:19,025 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:13:19,025 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:13:19,079 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:19,083 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:13:19,083 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:13:20,147 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:20,150 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:20,151 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:13:19", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:13:20,151 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:13:29,147 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:29,149 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:29,150 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:13:28", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:13:29,150 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:13:29,250 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:29,272 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:29,805 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:13:29,805 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:13:29,844 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:29,857 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:13:29,857 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:13:39,148 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:39,151 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:39,152 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:13:38", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:13:39,152 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:13:40,068 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:40,075 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:40,794 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:13:40,795 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:13:40,945 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:40,954 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:13:40,955 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:13:49,149 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:49,150 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:49,151 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:13:48", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:13:49,151 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:13:51,294 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:51,302 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:51,880 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:13:51,881 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:13:52,040 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:52,043 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:13:52,044 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:13:58,150 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:58,153 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:58,154 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:13:57", "reporter_ip": "LONPA04", "attacker_ip": "51.141.114.209", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " United Kingdom" }
+2020-03-28 10:13:58,155 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:13:59,151 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:59,154 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:13:59,155 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:13:58", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:13:59,155 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:02,280 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:02,291 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:02,839 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:14:02,840 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:14:02,892 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:02,894 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:14:02,894 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:14:10,151 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:10,154 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:10,155 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:09", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:14:10,155 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:13,086 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:13,098 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:13,638 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:14:13,639 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:14:13,684 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:13,689 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:14:13,689 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:14:19,152 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:19,155 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:19,157 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:18", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:14:19,157 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:23,902 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:23,911 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:24,314 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:14:24,314 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:14:24,397 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:24,399 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:14:24,399 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:14:30,153 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:30,159 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:30,160 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:29", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:14:30,161 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:34,585 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:34,588 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:35,412 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:14:35,413 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:14:35,458 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:35,462 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:14:35,462 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:14:39,153 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:39,156 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:39,157 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:38", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:14:39,158 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:45,645 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:45,646 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:46,204 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:14:46,204 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:14:46,248 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:46,253 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:14:46,254 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:14:49,154 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:49,157 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:49,158 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:48", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:14:49,158 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:50,154 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:50,159 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:50,160 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:49", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:14:50,161 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:50,164 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:50,166 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:50,167 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:49", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:14:50,168 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:14:56,444 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:56,458 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:56,818 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:14:56,819 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:14:56,864 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:56,868 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:14:56,868 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:14:59,155 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:59,158 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:14:59,160 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:58", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:14:59,160 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:00,071 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,073 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,074 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:59", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:15:00,074 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:00,076 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,077 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,078 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:59", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:15:00,078 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:00,155 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,156 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,157 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:59", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:15:00,157 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:00,159 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,160 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:00,161 - httpserver.py - paste.httpserver.ThreadPool[10726] - kill_hung_threads status: 10 threads (0 working, 10 idle, 0 starting) ave time N/A, max time 0.00sec, killed 0 workers
+2020-03-28 10:15:00,161 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:14:59", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:15:00,161 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:01,155 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:01,158 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:01,159 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:15:00", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:15:01,160 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:01,163 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:01,165 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:01,166 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:15:00", "reporter_ip": "LONPA04", "attacker_ip": "10.8.20.94", "victim_ip": "10.2.30.24", "threat": "SMB: User Password Brute Force Attempt(40004)", "threat_category": "brute-force", "src_loc": " 10.0.0.0-10.255.255.255" }
+2020-03-28 10:15:01,167 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:07,074 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:07,078 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:07,473 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:15:07,474 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:15:07,527 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:07,529 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:15:07,529 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:15:08,156 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:08,157 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:08,158 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:15:07", "reporter_ip": "LONPA04", "attacker_ip": "51.141.114.209", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " United Kingdom" }
+2020-03-28 10:15:08,158 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:09,156 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:09,157 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:09,158 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:15:08", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:15:09,158 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
+2020-03-28 10:15:17,701 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:17,704 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:18,103 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/stylesheets/main.css
+2020-03-28 10:15:18,104 - panedl.py - root[10726] - Mimetype: text/css
+2020-03-28 10:15:18,146 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:18,161 - panedl.py - root[10726] - File loaded: /home/paloalto/paloalto-edl-agent/static/js/jfile.js
+2020-03-28 10:15:18,162 - panedl.py - root[10726] - Mimetype: application/javascript
+2020-03-28 10:15:20,160 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:20,167 - httpserver.py - paste.httpserver.ThreadPool[10726] - Added task (0 tasks queued)
+2020-03-28 10:15:20,170 - panedl.py - root[10726] - uri:/jobs/threat_update_source { "timestamp": "2020/03/28 10:15:19", "reporter_ip": "LONPA04", "attacker_ip": "139.196.126.225", "victim_ip": "10.2.32.222", "threat": "SSH User Authentication Brute Force Attempt(40015)", "threat_category": "brute-force", "src_loc": " China" }
+2020-03-28 10:15:20,170 - panedl.py - root[10726] - Authorization(authtype='Basic', params='YWRtaW46cGFsb2FsdG8=')
