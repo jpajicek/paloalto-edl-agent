@@ -13,6 +13,8 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+num_logs_page = 100
+
 def _setGlobalVars(usr,pasw,rfresh,dbhost,dbexp):
 	global USERNAME
 	global PASSWORD 
@@ -43,13 +45,14 @@ def requiresLogin(f):
   	return authenticate
 
 class DB:
+	""" Redis Database handler """ 
+	database = ''
 	def __init__(self):
 		self.host = str(DBHOST)
 		self.port = 6379
-		self.db = 0
 		self.exp = int(DBEXP)
 	def __connect__(self):
-        	self.con = redis.Redis(host=self.host, port=self.port, db=self.db)
+        	self.con = redis.Redis(host=self.host, port=self.port, db=self.database)
 	def set(self, data):
         	self.__connect__()
         	self.con.set('L-'+str(time.time()), data, ex=self.exp )
@@ -61,6 +64,11 @@ class DB:
 		return self.con.get(key)
 	def ttl(self, key):
                 return self.con.ttl(key)
+
+class ThreatLogDB(DB):
+	""" Use database name [0] """
+	database = 1
+
 
 class StaticFileHandler(webapp2.RequestHandler):
 	def get(self, path):
@@ -82,42 +90,43 @@ class StaticFileHandler(webapp2.RequestHandler):
 class MainPage(webapp2.RequestHandler):
 	def get(self):
 		offset = int(self.request.get('offset', '0'))
-		offset += 200
+		offset += num_logs_page
 		rowcount  = 0
 		rowid = ''
-		r = DB()
+		r = ThreatLogDB()
                 keys = r.listkeys()
 		num_keys = str(len(keys))
 
 		self.response.headers['Content-Type'] = 'text/html'
 		self.response.out.write("""<!DOCTYPE html>
 			<html lang="en">
-			<head>
-				<link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css" >
-				<meta http-equiv="refresh" content="{0}">
-				<meta charset="UTF-8">
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-				<script type="text/javascript" src="/static/js/jfile.js"></script>
-				<title>Palo Alto EDL Service</title>
-			</head>
-			<body onload="myFunction()">
-			<div class="header"><b>PaloAlto External Dynamic List Service</b><br></div>
-			<div class="menu-container"><ul>
-				<li><a class="active" href="/">Dashboard</a></li>
-  				<li><a href="/lists/threats_sources.txt">Threat EDL</a></li>
-			</ul>
-			</div>
-			<div class="normal-size">Events recorded in database: {1} </div>
-			<div class="normal-size">Database expiry: {2} seconds</div>
-			<div class="normal-size">Threat updates uri:/jobs/threat_update_source
-			<div class="normal-size">Page refresh: {0} seconds</div>&nbsp;
-			<div class="log-header-container"><span class="log-header">FIREWALL LOGS</span></div>
+				<head>
+					<link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css" >
+					<meta http-equiv="refresh" content="{0}">
+					<meta charset="UTF-8">
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+					<script type="text/javascript" src="/static/js/jfile.js"></script>
+					<title>Palo Alto EDL Service</title>
+				</head>
+				<body onload="myFunction()">
+				<div class="header"><b>PaloAlto External Dynamic List Service</b><br></div>
+				<div class="menu-container">
+					<ul>
+						<li><a class="active" href="/">Dashboard</a></li>
+  						<li><a href="/lists/threats_sources.txt">Threat EDL</a></li>
+					</ul>
+				</div>
+				<div class="normal-size">Events recorded in database: {1} </div>
+				<div class="normal-size">Database expiry: {2} seconds</div>
+				<div class="normal-size">Threat updates uri:/jobs/threat_update_source
+				<div class="normal-size">Page refresh: {0} seconds</div>&nbsp;
+				<div class="log-header-container"><span class="log-header">FIREWALL LOGS</span></div>
 			""".format(RFRESH,num_keys,DBEXP,offset))
 		for  i in keys[0:offset]:
 			rowcount += 1
 			logs = r.get(i)
 			exp = r.ttl(i)
-			if rowcount == offset - 200:
+			if rowcount == offset - num_logs_page:
 				rowid = "scroll-to"
 			template_values = {
 				'index': i,
@@ -128,7 +137,9 @@ class MainPage(webapp2.RequestHandler):
 
 			logs = JINJA_ENVIRONMENT.get_template('static/html/log_table.html')
 			self.response.write(logs.render(template_values))
-		self.response.out.write('<p><a  href="/?offset={}">Load more</a></p>'.format(offset))
+		logging.debug('number of keys:'+str(num_keys)+'-----number of logs per page:'+str(num_logs_page))
+		if int(num_keys) > int(num_logs_page):
+			self.response.out.write('<p><a  href="/?offset={}">Load more</a></p>'.format(offset))
 		self.response.out.write('</div></body></html>')
 
 
@@ -139,7 +150,7 @@ class JobsThreatUpdateSource(webapp2.RequestHandler):
 		path = self.request.path
 		logging.info('uri:'+ path+' '+ content)
 		logging.info(self.request.authorization)
-		r = DB()
+		r = ThreatLogDB()
 		r = r.set(content)
 
 class GetThreatsSources(webapp2.RequestHandler):
