@@ -137,7 +137,6 @@ class MainPage(webapp2.RequestHandler):
 
 			logs = JINJA_ENVIRONMENT.get_template('static/html/log_table.html')
 			self.response.write(logs.render(template_values))
-		logging.debug('number of keys:'+str(num_keys)+'-----number of logs per page:'+str(num_logs_page))
 		if int(num_keys) > int(num_logs_page):
 			self.response.out.write('<p><a  href="/?offset={}">Load more</a></p>'.format(offset))
 		self.response.out.write('</div></body></html>')
@@ -156,8 +155,17 @@ class JobsThreatUpdateSource(webapp2.RequestHandler):
 class GetThreatsSources(webapp2.RequestHandler):
 	""" Source list """
 	def get(self):
+		ip_list = []
+		r = ThreatLogDB()
+                keys = r.listkeys()
 		self.response.headers['Content-Type'] = 'text/plain'
-		self.response.write('Goodbye, World!')
+		for i in keys:
+			log = json.loads(r.get(i))
+			ip_list.append(str(log['attacker_ip']))
+
+		ip_list = list(dict.fromkeys(ip_list))
+		ip_list_str="\n".join(ip_list)
+		self.response.write('{}'.format(ip_list_str))
 
 
 application = webapp2.WSGIApplication([
