@@ -64,21 +64,33 @@ class DB:
 		return self.con.get(key)
 	def ttl(self, key):
                 return self.con.ttl(key)
+	def sadd(self, sname, elmt):
+		self.__connect__()
+		self.con.sadd( sname, elmt)
+	def srem(self, sname, elmt):
+		self.__connect__()
+		self.con.srem( sname, elmt)
+	def smembers(self, sname):
+		self.__connect__()
+		return self.con.smembers(sname)
 
 class ThreatLogDB(DB):
 	""" Use database name [0] """
 	database = 1
 
+class WhitelistDB(DB):
+        """ Use database name [0] """
+        database = 15
 
 class StaticFileHandler(webapp2.RequestHandler):
 	def get(self, path):
 		abs_path = os.path.abspath(os.path.join(self.app.config.get('webapp2_static.static_file_path', 'static'), path))
-		logging.debug('File loaded: '+str(abs_path))
+		logging.debug('DEBUG: File loaded: '+str(abs_path))
 		if os.path.isdir(abs_path) or abs_path.find(os.getcwd()) != 0:
 			self.response.set_status(403)
 			return
 		try:
-			logging.debug('Mimetype: '+str(mimetypes.guess_type(abs_path)[0]))
+			logging.debug('DEBUG: Mimetype: '+str(mimetypes.guess_type(abs_path)[0]))
 			self.response.headers['Content-Type'] = mimetypes.guess_type(abs_path)[0]
 			f = open(abs_path, 'r')
 			self.response.headers.add_header('Content-Type', mimetypes.guess_type(abs_path)[0])
@@ -94,9 +106,10 @@ class MainPage(webapp2.RequestHandler):
 		rowcount  = 0
 		rowid = ''
 		r = ThreatLogDB()
+		whitelist = WhitelistDB()
                 keys = r.listkeys()
 		num_keys = str(len(keys))
-
+		th_whitelist = list(whitelist.smembers('threat_whitelist'))
 		self.response.headers['Content-Type'] = 'text/html'
 		self.response.out.write("""<!DOCTYPE html>
 			<html lang="en">
@@ -118,10 +131,11 @@ class MainPage(webapp2.RequestHandler):
 				</div>
 				<div class="normal-size">Events recorded in database: {1} </div>
 				<div class="normal-size">Database expiry: {2} seconds</div>
-				<div class="normal-size">Threat updates uri:/jobs/threat_update_source
-				<div class="normal-size">Page refresh: {0} seconds</div>&nbsp;
+				<div class="normal-size">Threat updates uri:/jobs/threat_update_source</div>
+				<div class="normal-size">Page refresh: {0} seconds</div>
+				<div class="normal-size" style="display: table;"><div style="display: table-cell; white-space: nowrap">Threat EDL whitelist:&nbsp;</div><div style="display: table-cell;">{4}</div></div>&nbsp; 
 				<div class="log-header-container"><span class="log-header">FIREWALL LOGS</span></div>
-			""".format(RFRESH,num_keys,DBEXP,offset))
+			""".format(RFRESH,num_keys,DBEXP,offset,th_whitelist))
 		for  i in keys[0:offset]:
 			rowcount += 1
 			logs = r.get(i)
@@ -148,7 +162,7 @@ class JobsThreatUpdateSource(webapp2.RequestHandler):
 		content = self.request.body
 		path = self.request.path
 		logging.info('uri:'+ path+' '+ content)
-		logging.info(self.request.authorization)
+		logging.debug('DEBUG: '+self.request.authorization)
 		r = ThreatLogDB()
 		r = r.set(content)
 
@@ -158,13 +172,17 @@ class GetThreatsSources(webapp2.RequestHandler):
 		ip_list = []
 		r = ThreatLogDB()
                 keys = r.listkeys()
+		whitelist = WhitelistDB()
+		th_whitelist = whitelist.smembers('threat_whitelist')
 		self.response.headers['Content-Type'] = 'text/plain'
 		for i in keys:
 			log = json.loads(r.get(i))
 			ip_list.append(str(log['attacker_ip']))
 
 		ip_list = list(dict.fromkeys(ip_list))
+		ip_list = list(set(ip_list) - th_whitelist)
 		ip_list_str="\n".join(ip_list)
+
 		self.response.write('{}'.format(ip_list_str))
 
 
