@@ -162,7 +162,7 @@ class JobsThreatUpdateSource(webapp2.RequestHandler):
 		content = self.request.body
 		path = self.request.path
 		logging.info('uri:'+ path+' '+ content)
-		logging.debug('DEBUG: '+self.request.authorization)
+		logging.debug('DEBUG: '+str(self.request.authorization))
 		r = ThreatLogDB()
 		r = r.set(content)
 
