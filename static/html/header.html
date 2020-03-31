@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css" >
+	{% if page_refresh != '' %}
+	<meta http-equiv="refresh" content="{{ page_refresh }}">
+	{% endif %}
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/static/js/jfile.js"></script>
+	<title>Palo Alto EDL Service</title>
+</head>
+<body onload="myFunction()">
+	<div class="header"><b>PaloAlto External Dynamic List Service</b><br></div>
+	<div class="menu-container">
+		<ul>
+			<li><a class="{{ dashboard }}" href="/">Dashboard</a></li>
+			<li><a href="/lists/threats_sources.txt">Threat EDL</a></li>
+			<li><a class="{{ admin }}" href="/admin/setup">Admin</a></li>
+		</ul>
+	</div>
+
+	<div class="normal-size">
+		{% if num_keys %}<div>Events recorded in database: {{ num_keys }} </div>{% endif %}
+		{% if db_exp %}<div>Database expiry: {{ db_exp }}  seconds</div>{% endif %}
+		<div>Threat updates uri:/jobs/threat_update_source</div>
+		{% if page_refresh %}<div>Page refresh: {{ page_refresh }} seconds</div>{% endif %}
+		{% if th_whitelist %}<div class="normal-size" style="display: table;"><div style="display: table-cell; white-space: nowrap">Threat EDL whitelist:&nbsp;</div><div style="display: table-cell;">{{ th_whitelist }}</div>{% endif %}
+	</div>
+	&nbsp;

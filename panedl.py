@@ -110,39 +110,27 @@ class MainPage(webapp2.RequestHandler):
                 keys = r.listkeys()
 		num_keys = str(len(keys))
 		th_whitelist = list(whitelist.smembers('threat_whitelist'))
+
 		self.response.headers['Content-Type'] = 'text/html'
-		self.response.out.write("""<!DOCTYPE html>
-			<html lang="en">
-				<head>
-					<link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css" >
-					<meta http-equiv="refresh" content="{0}">
-					<meta charset="UTF-8">
-					<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-					<script type="text/javascript" src="/static/js/jfile.js"></script>
-					<title>Palo Alto EDL Service</title>
-				</head>
-				<body onload="myFunction()">
-				<div class="header"><b>PaloAlto External Dynamic List Service</b><br></div>
-				<div class="menu-container">
-					<ul>
-						<li><a class="active" href="/">Dashboard</a></li>
-  						<li><a href="/lists/threats_sources.txt">Threat EDL</a></li>
-					</ul>
-				</div>
-				<div class="normal-size">Events recorded in database: {1} </div>
-				<div class="normal-size">Database expiry: {2} seconds</div>
-				<div class="normal-size">Threat updates uri:/jobs/threat_update_source</div>
-				<div class="normal-size">Page refresh: {0} seconds</div>
-				<div class="normal-size" style="display: table;"><div style="display: table-cell; white-space: nowrap">Threat EDL whitelist:&nbsp;</div><div style="display: table-cell;">{4}</div></div>&nbsp; 
-				<div class="log-header-container"><span class="log-header">FIREWALL LOGS</span></div>
-			""".format(RFRESH,num_keys,DBEXP,offset,th_whitelist))
+                header_values = {
+                        'page_refresh': RFRESH,
+			'num_keys': num_keys,
+			'db_exp': DBEXP,
+			'th_whitelist': th_whitelist,
+			'dashboard': 'active',
+                }
+
+                header = JINJA_ENVIRONMENT.get_template('static/html/header.html')
+                self.response.write(header.render(header_values))
+
+		self.response.out.write('<div class="log-header-container"><span class="log-header">FIREWALL LOGS</span></div>')
 		for  i in keys[0:offset]:
 			rowcount += 1
 			logs = r.get(i)
 			exp = r.ttl(i)
 			if rowcount == offset - num_logs_page:
 				rowid = "scroll-to"
-			template_values = {
+			log_table_values = {
 				'index': i,
 				'logs': logs,
 				'exp': exp,
@@ -150,10 +138,10 @@ class MainPage(webapp2.RequestHandler):
 			}
 
 			logs = JINJA_ENVIRONMENT.get_template('static/html/log_table.html')
-			self.response.write(logs.render(template_values))
+			self.response.write(logs.render(log_table_values))
 		if int(num_keys) > int(num_logs_page):
 			self.response.out.write('<p><a  href="/?offset={}">Load more</a></p>'.format(offset))
-		self.response.out.write('</div></body></html>')
+		self.response.out.write('</body></html>')
 
 
 class JobsThreatUpdateSource(webapp2.RequestHandler):
@@ -185,9 +173,41 @@ class GetThreatsSources(webapp2.RequestHandler):
 
 		self.response.write('{}'.format(ip_list_str))
 
+class AdminSetupPage(webapp2.RequestHandler):
+	""" EDL whitelisting """
+	@requiresLogin
+	def get(self):
+		RFRESH = ''
+		whitelist = WhitelistDB()
+		th_whitelist = list(whitelist.smembers('threat_whitelist'))
+
+		self.response.headers['Content-Type'] = 'text/html'
+		header_values = {
+			'page_refresh': RFRESH,
+			'admin': 'active',
+		}
+		content_values = {
+			'th_whitelist': th_whitelist,
+			}
+		header = JINJA_ENVIRONMENT.get_template('static/html/header.html')
+		content = JINJA_ENVIRONMENT.get_template('static/html/admin.html')
+		self.response.write(header.render(header_values))
+		self.response.write(content.render(content_values)) 
+		self.response.out.write('</body></html>')
+	def post(self):
+		whitelist_add = self.request.get('whitelist_add')
+		whitelist_remove = self.request.get('whitelist_remove')
+		whitelist = WhitelistDB()
+		if whitelist_add:
+			whitelist.sadd('threat_whitelist', whitelist_add)
+		if whitelist_remove:
+			whitelist.srem('threat_whitelist', whitelist_remove)
+		self.get()
+
 
 application = webapp2.WSGIApplication([
 	('/', MainPage),
+	('/admin/setup', AdminSetupPage),
 	('/jobs/threat_update_source', JobsThreatUpdateSource ),
 	('/lists/threats_sources.txt', GetThreatsSources ),
 	(r'/static/(.+)', StaticFileHandler),
