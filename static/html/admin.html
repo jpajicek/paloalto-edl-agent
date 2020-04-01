@@ -10,11 +10,17 @@
 <tr>
 <td> 
 <form name="threat_whitelist" action="/admin/setup" method="post" onsubmit="return validate_isIPaddress()">
-  <label for="whitelist_add">Add IP address</label>
+  <div class="normal-size" style="display: table;"> 
+  <div style="display: table-cell; white-space: nowrap">
+    <label for="whitelist_add">Add IP address</label><br>
+    <label for="whitelist_remove">Remove IP address&nbsp;&nbsp;</label>
+  </div>
+  <div style="display: table-cell; white-space: nowrap">
   <input type="text" id="add_whitelist" name="whitelist_add"><br>
-  <label for="whitelist_remove">Remove IP address</label>
   <input type="text" id="remove_whitelist" name="whitelist_remove">
   <input type="submit" name="btnSendForm" value="Run" />
+  </dv>
+  </div>
 </form>
 </tbody>
 </table>
