@@ -47,7 +47,8 @@ function start() {
   RETVAL=$?
   if [ $RETVAL -ne 0 ];then
     echo -n $"Starting $SERVICE: "
-    su -s "/bin/bash" -c "$PYTHON $SERVICEPATH/$SERVICE &" $USER
+    cd $SERVICEPATH
+    su -s "/bin/bash" -c "$PYTHON $SERVICE &" $USER
     RETVAL=$?
     echo
   fi
