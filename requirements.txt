@@ -1,8 +1,5 @@
-asn1crypto==0.24.0
 configparser==4.0.2
 crcmod==1.7
-cryptography==2.1.4
-enum34==1.1.6
 idna==2.6
 ipaddress==1.0.17
 Jinja2==2.11.1
@@ -10,9 +7,6 @@ keyring==10.6.0
 keyrings.alt==3.0
 MarkupSafe==1.1.1
 Paste==3.4.0
-pycrypto==2.6.1
-pygobject==3.26.1
-pyxdg==0.25
 redis==3.4.1
 SecretStorage==2.3.1
 six==1.14.0
