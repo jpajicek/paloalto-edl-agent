@@ -65,4 +65,6 @@ root@panu01:~# /etc/init.d/paloalto-edl.sh
 Usage: /etc/init.d/paloalto-edl.sh {start|stop|status|restart}
 You can change the default settings (as username, password) by editing config.ini file.
 ```
+### Screenshots
 
+![GitHub Logo](/screenshots/main.png)
