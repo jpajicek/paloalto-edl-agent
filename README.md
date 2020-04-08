@@ -49,7 +49,7 @@ $ adduser paloalto
 ```
 2.Check out the project locally
 ```
-paloalto@panu01:~$ git clone https://bitbucket.akqa.net/scm/emeait/paloalto-edl-agent.git
+paloalto@panu01:~$ git clone https://github.com/jpajicek/paloalto-edl-agent.git
 ```
 3.Install python dependencies 
 ```
