@@ -24,6 +24,8 @@ URI: /jobs/threat_update_source
 HTTP Headers: Headers:content-type, value: application/json
 Payload: { "timestamp": "$time_received", "reporter_ip": "$device_name", "attacker_ip": "$src", "victim_ip": "$dst", "threat": "$threatid", "threat_category": "$thr_category", "src_loc": " $srcloc" }
 ```
+![GitHub Logo](/screenshots/http-profile-1.png)
+Format: ![Alt Text](url)
 
 2)Configure log forwarding profile with forwarding method to use HTTP server profile above, then attach it to any relevant security rule to forward logs to the EDL service.
 
