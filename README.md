@@ -39,3 +39,30 @@ DMZ - Vulnerability - Web-browsing - High, LOG Type: Threat, Filter: ( zone.src 
 
 ![GitHub Logo](/screenshots/log-forwarding-profile-1.png)
 ![GitHub Logo](/screenshots/log-forwarding-profile-2.png)
+
+
+## Deployment
+
+1.Create a dedicated user for service to run as 
+```
+$ adduser paloalto
+```
+2.Check out the project locally
+```
+paloalto@panu01:~$ git clone https://bitbucket.akqa.net/scm/emeait/paloalto-edl-agent.git
+```
+3.Install python dependencies 
+```
+paloalto@panu01:~/paloalto-edl-agent$ pip install -r requirements.txt
+```
+4.Copy the service control script to init.d directory.
+```
+root@panu01:~/paloalto-edl-agent$ cp init.d/paloalto-edl.sh /etc/init.d/
+Run service control script as root
+```
+```
+root@panu01:~# /etc/init.d/paloalto-edl.sh
+Usage: /etc/init.d/paloalto-edl.sh {start|stop|status|restart}
+You can change the default settings (as username, password) by editing config.ini file.
+```
+
