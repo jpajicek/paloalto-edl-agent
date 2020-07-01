@@ -44,6 +44,25 @@ def requiresLogin(f):
     		f(self)
   	return authenticate
 
+def ip_to_binary(ip):
+	octet_list_int = ip.split(".")
+	octet_list_bin = [format(int(i), '08b') for i in octet_list_int]
+	binary = ("").join(octet_list_bin)
+	return binary
+
+def get_addr_network(address, net_size):
+	ip_bin = ip_to_binary(address)
+	network = ip_bin[0:32-(32-net_size)]    
+	return network
+
+def ip_in_prefix(ip_address, prefix):
+	[prefix_address, net_size] = prefix.split("/")
+	net_size = int(net_size)
+	prefix_network = get_addr_network(prefix_address, net_size)
+	ip_network = get_addr_network(ip_address, net_size)
+	return ip_network == prefix_network
+
+
 class DB:
 	""" Redis Database handler """ 
 	database = ''
@@ -78,9 +97,14 @@ class ThreatLogDB(DB):
 	""" Use database name [0] """
 	database = 1
 
-class WhitelistDB(DB):
+class IP_WhitelistDB(DB):
         """ Use database name [0] """
         database = 15
+
+class Prefix_WhitelistDB(DB):
+	"""  Use database name [0] """
+	database = 14
+
 
 class StaticFileHandler(webapp2.RequestHandler):
 	def get(self, path):
@@ -106,7 +130,7 @@ class MainPage(webapp2.RequestHandler):
 		rowcount  = 0
 		rowid = ''
 		r = ThreatLogDB()
-		whitelist = WhitelistDB()
+		whitelist = IP_WhitelistDB()
                 keys = r.listkeys()
 		num_keys = str(len(keys))
 		th_whitelist = list(whitelist.smembers('threat_whitelist'))
@@ -160,8 +184,10 @@ class GetThreatsSources(webapp2.RequestHandler):
 		ip_list = []
 		r = ThreatLogDB()
                 keys = r.listkeys()
-		whitelist = WhitelistDB()
+		whitelist = IP_WhitelistDB()
+		prefix_whitelist = Prefix_WhitelistDB()
 		th_whitelist = whitelist.smembers('threat_whitelist')
+		th_whitelist_prefixes =  list(prefix_whitelist.smembers('prefix_list'))
 		self.response.headers['Content-Type'] = 'text/plain'
 		for i in keys:
 			log = json.loads(r.get(i))
@@ -169,7 +195,13 @@ class GetThreatsSources(webapp2.RequestHandler):
 
 		ip_list = list(dict.fromkeys(ip_list))
 		ip_list = list(set(ip_list) - th_whitelist)
-		ip_list_str="\n".join(ip_list)
+		whitelist = []
+		for prefix in th_whitelist_prefixes:
+			for ip in ip_list:
+				if ip_in_prefix(ip,prefix):
+					whitelist.append(ip)
+		blacklist = list(set(ip_list) - set(whitelist))
+		ip_list_str="\n".join(blacklist)
 
 		self.response.write('{}'.format(ip_list_str))
 
@@ -178,9 +210,10 @@ class AdminSetupPage(webapp2.RequestHandler):
 	@requiresLogin
 	def get(self):
 		RFRESH = ''
-		whitelist = WhitelistDB()
+		whitelist = IP_WhitelistDB()
+		prefix_whitelist = Prefix_WhitelistDB()
 		th_whitelist = list(whitelist.smembers('threat_whitelist'))
-
+		th_whitelist_prefixes =  list(prefix_whitelist.smembers('prefix_list'))
 		self.response.headers['Content-Type'] = 'text/html'
 		header_values = {
 			'page_refresh': RFRESH,
@@ -188,6 +221,7 @@ class AdminSetupPage(webapp2.RequestHandler):
 		}
 		content_values = {
 			'th_whitelist': th_whitelist,
+			'th_whitelist_prefixes': th_whitelist_prefixes,
 			}
 		header = JINJA_ENVIRONMENT.get_template('static/html/header.html')
 		content = JINJA_ENVIRONMENT.get_template('static/html/admin.html')
@@ -197,11 +231,18 @@ class AdminSetupPage(webapp2.RequestHandler):
 	def post(self):
 		whitelist_add = self.request.get('whitelist_add')
 		whitelist_remove = self.request.get('whitelist_remove')
-		whitelist = WhitelistDB()
+		whitelist = IP_WhitelistDB()
+		prefix_add = self.request.get('whitelist_prefix_add')
+		prefix_remove = self.request.get('whitelist_prefix_remove')
+		prefix_whitelist = Prefix_WhitelistDB()
 		if whitelist_add:
 			whitelist.sadd('threat_whitelist', whitelist_add)
 		if whitelist_remove:
 			whitelist.srem('threat_whitelist', whitelist_remove)
+		if prefix_add:
+			prefix_whitelist.sadd('prefix_list', prefix_add)
+		if prefix_remove:
+			prefix_whitelist.srem('prefix_list', prefix_remove)
 		self.get()
 
 

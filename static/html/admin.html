@@ -1,27 +1,54 @@
 <div class="normal-size" style="width:50%">
-<table border="1" width="100%">
+<table border="0" width="100%">
 <tbody>
+<form name="threat_whitelist" action="/admin/setup" method="post" onsubmit="return validate_isIPaddress()">
 <tr>
-<td bgcolor="#e3e3e3">Threat EDL - Whitelisted IP addresses</td>
+<th bgcolor="#f9d6ac">Manage Threat EDL Whitelist</th>
+</tr>
+<tr>
+<tr>
+<td bgcolor="#e3e3e3"><b>IP address list</b></td>
 </tr>
 <tr>
 <td><div style="padding:2px">{{ th_whitelist }}</div></td>
 </tr>
 <tr>
-<td> 
-<form name="threat_whitelist" action="/admin/setup" method="post" onsubmit="return validate_isIPaddress()">
-  <div class="normal-size" style="display: table;"> 
-  <div style="display: table-cell; white-space: nowrap">
+<td bgcolor="#f9f9f9">
+  <div class="normal-size" style="display: table;">
+  <div style="display: table-cell; white-space: nowrap; width:40%;">
     <label for="whitelist_add">Add IP address</label><br>
     <label for="whitelist_remove">Remove IP address&nbsp;&nbsp;</label>
   </div>
   <div style="display: table-cell; white-space: nowrap">
   <input type="text" id="add_whitelist" name="whitelist_add"><br>
   <input type="text" id="remove_whitelist" name="whitelist_remove">
-  <input type="submit" name="btnSendForm" value="Run" />
+  <input type="submit" name="btnSendForm1" value="Save" />
+  </dv>
+  </div>
+<tr>
+<td bgcolor="#fff">&nbsp;</td>
+<tr>
+</tr>
+<td bgcolor="#e3e3e3"><b>IP prefix list</b></td>
+</tr>
+<tr>
+<td><div style="padding:2px">{{ th_whitelist_prefixes }}</div></td>
+</tr>
+<tr>
+<td bgcolor="#f9f9f9">
+  <div class="normal-size" style="display: table;">
+  <div style="display: table-cell; white-space: nowrap; width:40%;">
+    <label for="whitelist_add_prefix">Add IP prefix</label><br>
+    <label for="whitelist_remove_prefix">Remove IP prefix&nbsp;&nbsp;</label>
+  </div>
+  <div style="display: table-cell; white-space: nowrap">
+  <input type="text" id="add_whitelist_prefix" name="whitelist_prefix_add"><br>
+  <input type="text" id="remove_whitelist_prefix" name="whitelist_prefix_remove">
+  <input type="submit" name="btnSendForm2" value="Save" />
   </dv>
   </div>
 </form>
 </tbody>
 </table>
 </div>
+
